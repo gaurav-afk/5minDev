@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tv_topic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:hint="@string/topics" />
+
+    <Button
+        android:id="@+id/btn_web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_topic"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        android:text="Web"/>
+    <Button
+        android:id="@+id/btn_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_web"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        android:text="App"/>
+    <Button
+        android:id="@+id/btn_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_app"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        android:text="Game"/>
+    <Button
+        android:id="@+id/btn_aiml"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_game"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        android:text="AI/ML"/>
+
+
+
+</RelativeLayout>
