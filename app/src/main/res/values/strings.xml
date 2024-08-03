@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">5MinDev</string>
+    <string name="web">Web</string>
+    <string name="topics">Topics</string>
 </resources>
