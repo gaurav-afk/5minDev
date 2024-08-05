@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val openHome = Intent(this@MainActivity,  HomePage::class.java)
-        startActivity(openHome)
+        val openTopicSelectionPage = Intent(this@MainActivity,  TopicSelectionPage::class.java)
+        startActivity(openTopicSelectionPage)
     }
 }
