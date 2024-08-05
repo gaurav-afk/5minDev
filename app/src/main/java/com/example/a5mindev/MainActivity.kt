@@ -8,9 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        val openHome = Intent(this@MainActivity, HomePage::class.java)
+        val openHome = Intent(this@MainActivity,  HomePage::class.java)
         startActivity(openHome)
     }
 }

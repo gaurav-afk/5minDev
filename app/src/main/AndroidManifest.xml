@@ -13,10 +13,13 @@
         android:theme="@style/Theme._5MinDev"
         tools:targetApi="31">
         <activity
-            android:name=".TheFiveShorts"
+            android:name=".SubTopicSelectionPage"
             android:exported="false" />
         <activity
-            android:name=".FiveShorts"
+            android:name=".TopicSelectionPage"
+            android:exported="false" />
+        <activity
+            android:name=".FiveShortsFragment"
             android:exported="false" />
         <activity
             android:name=".HomePage"
