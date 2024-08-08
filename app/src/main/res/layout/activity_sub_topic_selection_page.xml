@@ -5,24 +5,88 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:paddingHorizontal="20dp"
     tools:context=".SubTopicSelectionPage">
 
 
-    <FrameLayout
-        android:id="@+id/frame_layout_sub_topic"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <TextView
+        android:id="@+id/tv_topics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:drawableLeft="@drawable/ic_back_arrow_24"
+        android:drawablePadding="5dp"
+        android:drawableTint="@color/white"
+        android:paddingTop="40dp"
+        android:text="Web development"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_front_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/grey"
+        android:gravity="start"
+        android:paddingVertical="10dp"
+        android:text="Front End Development"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tv_topics" />
+
+    <Button
+        android:id="@+id/btn_back_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/grey"
+        android:gravity="start"
+        android:paddingVertical="10dp"
+        android:text="Back End Development"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/btn_front_end" />
+
+    <Button
+        android:id="@+id/btn_full_stack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/grey"
+        android:gravity="start"
+        android:paddingVertical="10dp"
+        android:text="Full Stack Development"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/btn_back_end" />
+
+
+    <TextView
+        android:id="@+id/tv_api_response"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Api response..."
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/btn_full_stack" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginHorizontal="40dp"
+        android:maxWidth="20dp"
+        android:maxHeight="20dp"
+        android:src="@drawable/globe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:tint="@color/spaceblue" />
 
-        <Button
-            android:id="@+id/btn_web_front_dev"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Front End Development" />
-
-    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
