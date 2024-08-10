@@ -6,8 +6,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a5mindev.databinding.ActivitySubTopicSelectionPageBinding
-import com.google.ai.client.generativeai.GenerativeModel
-import kotlinx.coroutines.runBlocking
+
 
 
 class SubTopicSelectionPage : AppCompatActivity() {

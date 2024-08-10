@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_response"
+    <ListView
+        android:id="@+id/lv_shorts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="response..."
-        android:gravity="center"
-        />
+        tools:listitem="@layout/item_shorts" />
 
-</ScrollView>
+</LinearLayout>
