@@ -25,10 +25,10 @@ class SubTopicSelectionPage : AppCompatActivity() {
     }
 
     private fun handleButtonClick(subTopic: String) {
-        val openHomePage = Intent(this, HomePage::class.java)
-        openHomePage.putExtra("topic", topic)
-        openHomePage.putExtra("subTopic", subTopic)
-        startActivity(openHomePage)
+        val openFiveShorts = Intent(this, FiveShorts::class.java)
+        openFiveShorts.putExtra("topic", topic)
+        openFiveShorts.putExtra("subTopic", subTopic)
+        startActivity(openFiveShorts)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

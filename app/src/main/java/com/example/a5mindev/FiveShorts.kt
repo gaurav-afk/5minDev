@@ -1,13 +1,14 @@
 package com.example.a5mindev
 
-import DetailsFragment
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.example.a5mindev.databinding.FragmentFiveShortsBinding
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.example.a5mindev.databinding.ActivityFiveShortsBinding
 import com.example.a5mindev.sampledata.Shorts
 import com.google.ai.client.generativeai.GenerativeModel
 import kotlinx.coroutines.CoroutineScope
@@ -17,41 +18,15 @@ import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONException
 
-class FiveShortsFragment : Fragment() {
-
-    private var _binding: FragmentFiveShortsBinding? = null
-    private val binding get() = _binding!!
-
-    companion object {
-        private const val ARG_TOPIC = "topic"
-        private const val ARG_SUB_TOPIC = "subTopic"
-
-        fun newInstance(topic: String, subTopic: String): FiveShortsFragment {
-            return FiveShortsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_TOPIC, topic)
-                    putString(ARG_SUB_TOPIC, subTopic)
-                }
-            }
-        }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentFiveShortsBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val topic = arguments?.getString(ARG_TOPIC)
-        val subTopic = arguments?.getString(ARG_SUB_TOPIC)
-
-        if (!topic.isNullOrEmpty() && !subTopic.isNullOrEmpty()) {
-            val query = """Create five concise summaries on the topic of $topic and subtopic $subTopic. Each summary should include:
+class FiveShorts : AppCompatActivity() {
+    lateinit var binding: ActivityFiveShortsBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val topic = intent.getStringExtra("topic").orEmpty()
+        val subTopic = intent.getStringExtra("subTopic").orEmpty()
+        binding = ActivityFiveShortsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        val query = """Create five concise summaries on the topic of $topic and subtopic $subTopic. Each summary should include:
  
             Title: [Title]
             Description: [Description]
@@ -59,8 +34,7 @@ class FiveShortsFragment : Fragment() {
             Conclusion: [Conclusion]
 
             Ensure the summaries are informative and relevant to the topic and subtopic. also return data in pure json"""
-            fetchResponse(query)
-        }
+        fetchResponse(query)
     }
 
     private fun fetchResponse(query: String) {
@@ -79,7 +53,7 @@ class FiveShortsFragment : Fragment() {
             } catch (e: Exception) {
                 Log.e("FiveShortsFragment", "Error fetching response: ${e.message}", e)
                 withContext(Dispatchers.Main) {
-//                    handleError(e)
+                    // handleError(e)
                 }
             }
         }
@@ -89,7 +63,6 @@ class FiveShortsFragment : Fragment() {
         val shortsList = mutableListOf<Shorts>()
 
         try {
-
             Log.d("Raw Response", response)
 
             val cleanedResponse = response
@@ -126,28 +99,20 @@ class FiveShortsFragment : Fragment() {
     }
 
     private fun displayShorts(shortsList: List<Shorts>) {
-        val adapter = ShortsAdapter(requireContext(), shortsList)
+        val adapter = ShortsAdapter(this, shortsList)
         binding.lvShorts.adapter = adapter
-
         binding.lvShorts.setOnItemClickListener { _, _, position, _ ->
             val selectedShort = shortsList[position]
 
-            val detailsFragment = DetailsFragment.newInstance(
-                selectedShort.title,
-                selectedShort.description,
-                selectedShort.keypoints,
-                selectedShort.conclusion
-            )
+            val intent = Intent(this, ShortsDetail::class.java).apply {
+                putExtra(ShortsDetail.ARG_TITLE, selectedShort.title)
+                putExtra(ShortsDetail.ARG_DESCRIPTION, selectedShort.description)
+                putExtra(ShortsDetail.ARG_KEY_POINTS, selectedShort.keypoints)
+                putExtra(ShortsDetail.ARG_CONCLUSION, selectedShort.conclusion)
+            }
 
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.frame_content, detailsFragment)
-                .addToBackStack(null)
-                .commit()
+            startActivity(intent)
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }
