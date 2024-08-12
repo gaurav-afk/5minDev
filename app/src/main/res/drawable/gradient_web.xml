@@ -3,5 +3,6 @@
     <gradient
         android:startColor="@color/black"
         android:endColor="@color/spaceblue"
-        android:angle="270"/> <!-- Change to 270 for a top-to-bottom gradient -->
+        android:centerColor="@color/black"
+        android:angle="270"/>
 </shape>
