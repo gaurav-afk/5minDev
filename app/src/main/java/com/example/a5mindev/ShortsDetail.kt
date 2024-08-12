@@ -18,19 +18,16 @@ class ShortsDetail : AppCompatActivity() {
         binding = ActivityShortsDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Retrieve the arguments passed to the activity
         title = intent.getStringExtra(ARG_TITLE)
         description = intent.getStringExtra(ARG_DESCRIPTION)
         keyPoints = intent.getStringExtra(ARG_KEY_POINTS)
         conclusion = intent.getStringExtra(ARG_CONCLUSION)
 
-        // Set the UI elements with the data
         binding.tvTitle.text = title
         binding.tvDescription.text = description
         binding.tvKeyPoints.text = keyPoints
         binding.tvConclusion.text = conclusion
 
-        // Handle the back navigation
         binding.tvGoBack.setOnClickListener {
             finish()
         }

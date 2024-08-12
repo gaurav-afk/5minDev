@@ -1,4 +1,4 @@
-// ShortsAdapter.kt
+
 package com.example.a5mindev
 
 import android.content.Context

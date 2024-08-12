@@ -52,9 +52,6 @@ class FiveShorts : AppCompatActivity() {
                 }
             } catch (e: Exception) {
                 Log.e("FiveShortsFragment", "Error fetching response: ${e.message}", e)
-                withContext(Dispatchers.Main) {
-                    // handleError(e)
-                }
             }
         }
     }
