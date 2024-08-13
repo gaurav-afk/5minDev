@@ -15,7 +15,7 @@ class TopicSelectionPage : AppCompatActivity() {
             R.id.btn_web -> "Web development"
             R.id.btn_app -> "App development"
             R.id.btn_game -> "Game development"
-            R.id.btn_aiml -> "Artificial intelligence and machine learning"
+            R.id.btn_aiml -> "AI and machine learning"
             else -> ""
         }
         handleButtonClick(data)

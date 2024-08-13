@@ -5,10 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@drawable/gradient_web"
     android:paddingHorizontal="20dp"
     tools:context=".SubTopicSelectionPage">
-
 
     <TextView
         android:id="@+id/tv_topics"
@@ -26,64 +25,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_front_end"
+    <ListView
+        android:id="@+id/listView_subtopics"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:dividerHeight="0dp"
+        android:divider="@color/grey"
+        android:footerDividersEnabled="false"
         android:layout_marginTop="30dp"
-        android:backgroundTint="@color/grey"
-        android:gravity="start"
-        android:paddingVertical="10dp"
-        android:text="Front End Development"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/tv_topics" />
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_topics"
+        app:layout_constraintBottom_toTopOf="@+id/logo" />
 
-    <Button
-        android:id="@+id/btn_back_end"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/grey"
-        android:gravity="start"
-        android:paddingVertical="10dp"
-        android:text="Back End Development"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/btn_front_end" />
-
-    <Button
-        android:id="@+id/btn_full_stack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/grey"
-        android:gravity="start"
-        android:paddingVertical="10dp"
-        android:text="Full Stack Development"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/btn_back_end" />
-
-
-    <TextView
-        android:id="@+id/tv_api_response"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="Api response..."
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/btn_full_stack" />
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginHorizontal="40dp"
-        android:maxWidth="20dp"
-        android:maxHeight="20dp"
-        android:src="@drawable/globe"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_globe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
