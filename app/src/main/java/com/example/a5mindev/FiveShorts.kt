@@ -26,15 +26,18 @@ class FiveShorts : AppCompatActivity() {
         val subTopic = intent.getStringExtra("subTopic").orEmpty()
         binding = ActivityFiveShortsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val query = """Create five concise summaries on the topic of $topic and subtopic $subTopic. Each summary should include:
- 
-            Title: [Title]
-            Description: [Description]
-            Key Points: [Key Points]
-            Conclusion: [Conclusion]
-
-            Ensure the summaries are informative and relevant to the topic and subtopic. also return data in pure json"""
+        val query =
+            """Create five summaries, each around 300 words, on the topic of $topic focusing specifically on the subtopic of $subTopic. Ensure each summary is random and should not be repeated and is detailed and directly related to the subtopic. Each summary should include:
+- **Title:** A concise and relevant title.
+- **Description:** A detail explanation in simple language of the aspect of the subtopic.
+- **Key Points:** Main points that highlight the essential information. add newline \n at last of each key point and circle point at the starting of each key point.
+- **Conclusion:** A brief summary of the findings or implications related to the subtopic.
+Make sure the summaries are informative, relevant, and strictly adhere to the subtopic. Return the summaries in pure JSON format.
+"""
         fetchResponse(query)
+        binding.tvGoBack.setOnClickListener {
+            finish()
+        }
     }
 
     private fun fetchResponse(query: String) {
@@ -76,16 +79,17 @@ class FiveShorts : AppCompatActivity() {
                 val title = jsonObject.optString("Title", "")
                 val description = jsonObject.optString("Description", "")
 
-                val keyPointsArray = jsonObject.optJSONArray("Key Points")
-                val keyPoints = keyPointsArray?.let {
-                    (0 until it.length()).joinToString(separator = ", ") { index ->
-                        it.optString(index)
-                    }
-                } ?: ""
+                val keyPoints = jsonObject.optString("Key Points", "")
+//                val keyPointsArray = jsonObject.optJSONArray("Key Points")
+//                val keyPoints = keyPointsArray?.let {
+//                    (0 until it.length()).joinToString(separator = ", ") { index ->
+//                        it.optString(index)
+//                    }
+//                } ?: ""
 
                 val conclusion = jsonObject.optString("Conclusion", "")
 
-                shortsList.add(Shorts(title, description, keyPoints, conclusion))
+                shortsList.add(Shorts(title, description, keyPoints, "Conclusion: $conclusion"))
             }
         } catch (e: JSONException) {
             Log.e("FiveShortsFragment", "Error parsing JSON response: ${e.message}", e)
