@@ -66,15 +66,15 @@ class SubTopicSelectionPage : AppCompatActivity() {
         when (topic) {
             "web development" -> binding.root.background = ContextCompat.getDrawable(this, R.drawable.gradient_web)
             "app development" -> binding.root.background = ContextCompat.getDrawable(this, R.drawable.gradient_app)
-            "game development" -> binding.root.background = ContextCompat.getDrawable(this, R.drawable.gradient_web)
-            "ai and machine learning" -> binding.root.background = ContextCompat.getDrawable(this, R.drawable.gradient_web)
+            "game development" -> binding.root.background = ContextCompat.getDrawable(this, R.drawable.gradient_game)
+            "ai and machine learning" -> binding.root.background = ContextCompat.getDrawable(this, R.drawable.gradient_aiml)
             else -> binding.root.background = ContextCompat.getDrawable(this, R.drawable.gradient_web)
         }
         when (topic) {
             "web development" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.spaceblue))
             "app development" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.oldMandarin))
-            "game development" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.oldMandarin))
-            "ai and machine learning" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.oldMandarin))
+            "game development" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.parisianNight))
+            "ai and machine learning" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.bayou))
             else -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.oldMandarin))
         }
     }
