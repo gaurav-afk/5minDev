@@ -54,6 +54,7 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.activity:activity:1.8.0")
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
     implementation("androidx.fragment:fragment-ktx:1.8.2")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.google.ai.client.generativeai:generativeai:0.1.2")
