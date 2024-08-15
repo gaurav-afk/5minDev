@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     android:paddingHorizontal="20dp"
-    tools:context=".TopicSelectionPage">
+    tools:context=".TopicScreen">
 
 
     <TextView

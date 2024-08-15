@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.a5mindev.databinding.ActivityTopicSelectionPageBinding
+import com.example.a5mindev.databinding.ActivityTopicScreenBinding
 
-class TopicSelectionPage : AppCompatActivity() {
-    private lateinit var binding: ActivityTopicSelectionPageBinding
+class TopicScreen : AppCompatActivity() {
+    private lateinit var binding: ActivityTopicScreenBinding
 
     val topicButtonClickListener = View.OnClickListener { view ->
         val data = when(view.id){
@@ -23,14 +23,14 @@ class TopicSelectionPage : AppCompatActivity() {
     }
 
     private fun handleButtonClick(data: String) {
-        val openSubTopicPage = Intent(this, SubTopicSelectionPage::class.java)
+        val openSubTopicPage = Intent(this, SubTopicScreen::class.java)
         openSubTopicPage.putExtra("topic", data)
         startActivity(openSubTopicPage)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityTopicSelectionPageBinding.inflate(layoutInflater)
+        binding = ActivityTopicScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.btnWeb.setOnClickListener(topicButtonClickListener)

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_web"
     android:paddingHorizontal="20dp"
-    tools:context=".SubTopicSelectionPage">
+    tools:context=".SubTopicScreen">
 
     <TextView
         android:id="@+id/tv_topics"

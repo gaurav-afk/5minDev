@@ -21,7 +21,7 @@
             android:drawablePadding="5dp"
             android:drawableTint="@color/white"
             android:paddingTop="40dp"
-            android:text="Go Back"
+            android:text="@string/shorts"
             android:textColor="@color/grey"
             android:textSize="24sp" />
 
@@ -82,7 +82,7 @@
             android:id="@+id/lv_shorts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="2000dp"
             android:divider="@android:color/transparent"
             android:dividerHeight="15dp"
             android:visibility="gone"
