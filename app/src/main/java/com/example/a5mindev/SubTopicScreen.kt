@@ -6,16 +6,16 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.example.a5mindev.databinding.ActivitySubTopicSelectionPageBinding
+import com.example.a5mindev.databinding.ActivitySubTopicScreenBinding
 
-class SubTopicSelectionPage : AppCompatActivity() {
-    private lateinit var binding: ActivitySubTopicSelectionPageBinding
+class SubTopicScreen : AppCompatActivity() {
+    private lateinit var binding: ActivitySubTopicScreenBinding
     private lateinit var topic: String
     private lateinit var subtopics: List<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySubTopicSelectionPageBinding.inflate(layoutInflater)
+        binding = ActivitySubTopicScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         topic = intent.getStringExtra("topic") ?: "Unknown"
@@ -30,9 +30,8 @@ class SubTopicSelectionPage : AppCompatActivity() {
             }
             binding.listViewSubtopics.adapter = adapter
         } else {
-            Log.w("SubTopicSelectionPage", "No subtopics found for topic: $topic")
+            Log.w("SubTopicScreen", "No subtopics found for topic: $topic")
         }
-
         binding.tvTopics.setOnClickListener {
             finish()
         }
@@ -42,17 +41,17 @@ class SubTopicSelectionPage : AppCompatActivity() {
         return when (topic) {
             "Web development" -> listOf("Front end development", "Back end development", "Full stack development")
             "App development" -> listOf("Android development", "iOS development", "Cross-platform development", "Flutter", "React Native")
-            "Game development" -> listOf("Game design", "Unity development", "Unreal Engine development")
+            "Game development" -> listOf("Game Design", "Game Programming", "Art and Animation", "Audio Design", "Game Physics", "Game Engines", "UI/UX Design", "Testing and Debugging", "VR/AR Development", "Unity Development", "Unreal Engine Development")
             "AI and machine learning" -> listOf("Machine learning", "Deep learning", "Data science")
             else -> emptyList()
         }
     }
 
     private fun handleButtonClick(subTopic: String) {
-        val openFiveShorts = Intent(this, FiveShorts::class.java)
-        openFiveShorts.putExtra("topic", topic)
-        openFiveShorts.putExtra("subTopic", subTopic)
-        startActivity(openFiveShorts)
+            val openCategoryScreen = Intent(this, CategoryScreen::class.java)
+        openCategoryScreen.putExtra("topic", topic)
+        openCategoryScreen.putExtra("subTopic", subTopic)
+            startActivity(openCategoryScreen)
     }
 
     private fun changeLogoImage(topic: String) {

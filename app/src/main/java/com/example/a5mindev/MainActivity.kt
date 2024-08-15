@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val openTopicSelectionPage = Intent(this@MainActivity,  TopicSelectionPage::class.java)
+        val openTopicSelectionPage = Intent(this@MainActivity,  TopicScreen::class.java)
         startActivity(openTopicSelectionPage)
     }
 }

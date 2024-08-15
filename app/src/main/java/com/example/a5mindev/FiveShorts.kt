@@ -29,13 +29,14 @@ class FiveShorts : AppCompatActivity() {
         setContentView(binding.root)
         val query =
             """Create five summaries, each around 300 words, on the topic of $topic focusing specifically on the subtopic of $subTopic. Ensure each summary is random and should not be repeated and is detailed and directly related to the subtopic. Each summary should include:
-- **Title:** A concise and relevant title.
-- **Description:** A detail explanation in simple language of the aspect of the subtopic.
-- **Key Points:** Main points that highlight the essential information. add newline \n at last of each key point and circle point at the starting of each key point.
+            - **Title:** A concise and relevant title.
+            - **Description:** A detail explanation in simple language of the aspect of the subtopic.
+- **Key Points:** Main points that highlight the essential information. add newline \n at last of each key point and circle at the starting of each key point.
 - **Conclusion:** A brief summary of the findings or implications related to the subtopic.
 Make sure the summaries are informative, relevant, and strictly adhere to the subtopic. Return the summaries in pure JSON format.
 """
         fetchResponse(query)
+
         binding.tvGoBack.setOnClickListener {
             finish()
         }
@@ -60,6 +61,7 @@ Make sure the summaries are informative, relevant, and strictly adhere to the su
                 withContext(Dispatchers.Main) {
                     displayShorts(shortsList)
                 }
+                Log.i("response: ",response)
             } catch (e: Exception) {
                 Log.e("FiveShortsFragment", "Error fetching response: ${e.message}", e)
                 withContext(Dispatchers.Main) {
@@ -102,6 +104,7 @@ Make sure the summaries are informative, relevant, and strictly adhere to the su
                 .trim()
                 .removePrefix("```json")
                 .removeSuffix("```")
+                .replace("\\n", "")  // Removes any newline characters
                 .trim()
 
             val jsonArray = JSONArray(cleanedResponse)
@@ -112,9 +115,14 @@ Make sure the summaries are informative, relevant, and strictly adhere to the su
                 val title = jsonObject.optString("Title", "")
                 val description = jsonObject.optString("Description", "")
 
+                // Clean up key points by removing any unexpected line breaks or formatting
                 val keyPoints = jsonObject.optString("Key Points", "")
+                    .replace("\n", " ")  // Replace line breaks with a space
+                    .trim()
 
                 val conclusion = jsonObject.optString("Conclusion", "")
+                    .replace("\n", " ")  // Replace line breaks with a space
+                    .trim()
 
                 shortsList.add(Shorts(title, description, keyPoints, "Conclusion: $conclusion"))
             }
@@ -125,6 +133,40 @@ Make sure the summaries are informative, relevant, and strictly adhere to the su
         Log.d("Parsed Shorts List", shortsList.toString())
         return shortsList
     }
+
+//    private fun parseResponse(response: String): List<Shorts> {
+//        val shortsList = mutableListOf<Shorts>()
+//
+//        try {
+//            Log.d("Raw Response", response)
+//
+//            val cleanedResponse = response
+//                .trim()
+//                .removePrefix("```json")
+//                .removeSuffix("```")
+//                .trim()
+//
+//            val jsonArray = JSONArray(cleanedResponse)
+//
+//            for (i in 0 until jsonArray.length()) {
+//                val jsonObject = jsonArray.getJSONObject(i)
+//
+//                val title = jsonObject.optString("Title", "")
+//                val description = jsonObject.optString("Description", "")
+//
+//                val keyPoints = jsonObject.optString("Key Points", "")
+//
+//                val conclusion = jsonObject.optString("Conclusion", "")
+//
+//                shortsList.add(Shorts(title, description, keyPoints, "Conclusion: $conclusion"))
+//            }
+//        } catch (e: JSONException) {
+//            Log.e("FiveShortsFragment", "Error parsing JSON response: ${e.message}", e)
+//        }
+//
+//        Log.d("Parsed Shorts List", shortsList.toString())
+//        return shortsList
+//    }
 
 
 }
