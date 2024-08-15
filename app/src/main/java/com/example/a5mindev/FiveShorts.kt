@@ -3,6 +3,7 @@ package com.example.a5mindev
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContentProviderCompat.requireContext
@@ -41,6 +42,12 @@ Make sure the summaries are informative, relevant, and strictly adhere to the su
     }
 
     private fun fetchResponse(query: String) {
+        CoroutineScope(Dispatchers.Main).launch {
+            binding.shimmerLayout.startShimmer()
+            binding.shimmerLayout.visibility = View.VISIBLE
+            binding.lvShorts.visibility = View.GONE
+        }
+
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val generativeModel = GenerativeModel(
@@ -55,9 +62,35 @@ Make sure the summaries are informative, relevant, and strictly adhere to the su
                 }
             } catch (e: Exception) {
                 Log.e("FiveShortsFragment", "Error fetching response: ${e.message}", e)
+                withContext(Dispatchers.Main) {
+                    binding.shimmerLayout.stopShimmer()
+                    binding.shimmerLayout.visibility = View.GONE
+                }
             }
         }
     }
+
+    private fun displayShorts(shortsList: List<Shorts>) {
+        binding.shimmerLayout.stopShimmer()
+        binding.shimmerLayout.visibility = View.GONE
+        binding.lvShorts.visibility = View.VISIBLE
+
+        val adapter = ShortsAdapter(this, shortsList)
+        binding.lvShorts.adapter = adapter
+        binding.lvShorts.setOnItemClickListener { _, _, position, _ ->
+            val selectedShort = shortsList[position]
+
+            val intent = Intent(this, ShortsDetail::class.java).apply {
+                putExtra(ShortsDetail.ARG_TITLE, selectedShort.title)
+                putExtra(ShortsDetail.ARG_DESCRIPTION, selectedShort.description)
+                putExtra(ShortsDetail.ARG_KEY_POINTS, selectedShort.keypoints)
+                putExtra(ShortsDetail.ARG_CONCLUSION, selectedShort.conclusion)
+            }
+
+            startActivity(intent)
+        }
+    }
+
 
     private fun parseResponse(response: String): List<Shorts> {
         val shortsList = mutableListOf<Shorts>()
@@ -80,12 +113,6 @@ Make sure the summaries are informative, relevant, and strictly adhere to the su
                 val description = jsonObject.optString("Description", "")
 
                 val keyPoints = jsonObject.optString("Key Points", "")
-//                val keyPointsArray = jsonObject.optJSONArray("Key Points")
-//                val keyPoints = keyPointsArray?.let {
-//                    (0 until it.length()).joinToString(separator = ", ") { index ->
-//                        it.optString(index)
-//                    }
-//                } ?: ""
 
                 val conclusion = jsonObject.optString("Conclusion", "")
 
@@ -99,21 +126,5 @@ Make sure the summaries are informative, relevant, and strictly adhere to the su
         return shortsList
     }
 
-    private fun displayShorts(shortsList: List<Shorts>) {
-        val adapter = ShortsAdapter(this, shortsList)
-        binding.lvShorts.adapter = adapter
-        binding.lvShorts.setOnItemClickListener { _, _, position, _ ->
-            val selectedShort = shortsList[position]
-
-            val intent = Intent(this, ShortsDetail::class.java).apply {
-                putExtra(ShortsDetail.ARG_TITLE, selectedShort.title)
-                putExtra(ShortsDetail.ARG_DESCRIPTION, selectedShort.description)
-                putExtra(ShortsDetail.ARG_KEY_POINTS, selectedShort.keypoints)
-                putExtra(ShortsDetail.ARG_CONCLUSION, selectedShort.conclusion)
-            }
-
-            startActivity(intent)
-        }
-    }
 
 }
