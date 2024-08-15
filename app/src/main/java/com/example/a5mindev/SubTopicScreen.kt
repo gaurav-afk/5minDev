@@ -41,8 +41,8 @@ class SubTopicScreen : AppCompatActivity() {
         return when (topic) {
             "Web development" -> listOf("Front end development", "Back end development", "Full stack development")
             "App development" -> listOf("Android development", "iOS development", "Cross-platform development", "Flutter", "React Native")
-            "Game development" -> listOf("Game Design", "Game Programming", "Art and Animation", "Audio Design", "Game Physics", "Game Engines", "UI/UX Design", "Testing and Debugging", "VR/AR Development", "Unity Development", "Unreal Engine Development")
-            "AI and machine learning" -> listOf("Machine learning", "Deep learning", "Data science")
+            "Game development" -> listOf("Game Design", "Game Programming", "Game Art and Animation", "Game Audio", "Game Engines", "UI/UX Design", "Game Testing and Debugging", "VR/AR Development")
+            "AI and machine learning" -> listOf("Machine Learning", "Deep Learning", "Natural Language Processing (NLP)", "Computer Vision", "Data Preparation and Processing", "Model Evaluation and Tuning", "Generative Models")
             else -> emptyList()
         }
     }
