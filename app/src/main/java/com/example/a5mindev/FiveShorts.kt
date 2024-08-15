@@ -26,6 +26,7 @@ class FiveShorts : AppCompatActivity() {
         val topic = intent.getStringExtra("topic").orEmpty()
         val subTopic = intent.getStringExtra("subTopic").orEmpty()
         binding = ActivityFiveShortsBinding.inflate(layoutInflater)
+        enableEdgeToEdge()
         setContentView(binding.root)
         val query =
             """Create five summaries, each around 300 words, on the topic of $topic focusing specifically on the subtopic of $subTopic. Ensure each summary is random and should not be repeated and is detailed and directly related to the subtopic. Each summary should include:

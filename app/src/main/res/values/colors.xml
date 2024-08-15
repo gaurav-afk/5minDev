@@ -4,11 +4,18 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#A2CA71</color>
     <color name="spaceblue">#3D90CB</color>
-    <color name="oldMandarin">#871F1F</color>
+    <color name="shinshu">#871F1F</color>
     <color name="parisianNight">#333240</color>
     <color name="lilacViolet">#74447c</color>
     <color name="bayou">#248280</color>
     <color name="gold">#F29D38</color>
     <color name="lightSpaceBlue">#FF3D90CB</color>
     <color name="grey">#525555</color>
+    <color name="tricornBlack">#2f2f2f</color>
+    <color name="tryit">#595959</color>
+    <color name="tryit2">#4d4d4d</color>
+    <color name="tryit3">#404040</color>
+    <color name="tryit4">#333333</color>
+
+
 </resources>

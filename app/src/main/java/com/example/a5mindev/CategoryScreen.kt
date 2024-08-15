@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.a5mindev.databinding.ActivityCategoryScreenBinding
 import com.google.android.flexbox.FlexboxLayout
 
@@ -14,16 +12,22 @@ class CategoryScreen : AppCompatActivity() {
     private lateinit var binding: ActivityCategoryScreenBinding
     private lateinit var flexboxLayout: FlexboxLayout
     private lateinit var categories: List<String>
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = ActivityCategoryScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         flexboxLayout = binding.flexboxLayout
         val subTopic = intent.getStringExtra("subTopic") ?: "Unknown"
         categories = getCategoriesForSubtopic(subTopic.lowercase())
+        binding.tvGoBack.text = subTopic
+        binding.tvGoBack.setOnClickListener{
+            finish()
+        }
         displayCategories(categories)
     }
+
+
 
     private fun getCategoriesForSubtopic(subTopic: String): List<String> {
         return when (subTopic) {

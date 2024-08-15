@@ -3,11 +3,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:flexbox="http://schemas.android.com/apk/res-auto"
     android:id="@+id/flexbox_layout"
+    android:background="@drawable/gradient_category"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     flexbox:flexDirection="row"
     flexbox:flexWrap="wrap"
     android:padding="16dp">
 
+    <TextView
+        android:id="@+id/tv_go_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:drawableLeft="@drawable/ic_back_arrow_24"
+        android:drawablePadding="5dp"
+        android:drawableTint="@color/white"
+        android:paddingTop="40dp"
+        android:paddingBottom="30dp"
+        android:gravity="center_vertical"
+        android:text="@string/goback"
+        android:textColor="@color/grey"
+        android:textSize="20sp" />
 
 </com.google.android.flexbox.FlexboxLayout>

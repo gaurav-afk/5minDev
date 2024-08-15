@@ -47,4 +47,7 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="shorts">Shorts</string>
+    <string name="category">category</string>
+    <string name="goback">goback</string>
+    <string name="web_development">Web development</string>
 </resources>
