@@ -11,11 +11,13 @@
     <color name="gold">#F29D38</color>
     <color name="lightSpaceBlue">#FF3D90CB</color>
     <color name="grey">#525555</color>
+    <color name="lightGrey">#C3C9C9</color>
     <color name="tricornBlack">#2f2f2f</color>
-    <color name="tryit">#595959</color>
-    <color name="tryit2">#4d4d4d</color>
-    <color name="tryit3">#404040</color>
-    <color name="tryit4">#333333</color>
-
+    <color name="cynicalBlack">#171717</color>
+    <color name="web_color">#23404D</color>
+    <color name="app_color">#4B2929</color>
+    <color name="game_color">#2D2632</color>
+    <color name="aiml_color">#293331</color>
+    <color name="aiml_logo_color">#6DB3B3</color>
 
 </resources>

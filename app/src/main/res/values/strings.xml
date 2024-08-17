@@ -49,5 +49,9 @@
     <string name="shorts">Shorts</string>
     <string name="category">category</string>
     <string name="goback">goback</string>
-    <string name="web_development">Web development</string>
+    <string name="web_development">Web Development</string>
+    <string name="game_development">Game Development</string>
+    <string name="ai_ml">AI / ML</string>
+    <string name="app_development">App Development</string>
+    <string name="_5mindev">5MinDev</string>
 </resources>

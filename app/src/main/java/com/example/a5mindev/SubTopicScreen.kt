@@ -18,7 +18,7 @@ class SubTopicScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySubTopicScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        enableEdgeToEdge()
         topic = intent.getStringExtra("topic") ?: "Unknown"
         binding.tvSubTopics.text = topic
         subtopics = getSubtopicsForTopic(topic)
@@ -57,11 +57,11 @@ class SubTopicScreen : AppCompatActivity() {
 
     private fun changeLogoImage(topic: String) {
         when (topic) {
-            "web development" -> binding.logo.setImageResource(R.drawable.ic_globe)
+            "web development" -> binding.logo.setImageResource(R.drawable.internet)
             "app development" -> binding.logo.setImageResource(R.drawable.ic_smartphone_24)
-            "game development" -> binding.logo.setImageResource(R.drawable.ic_videogame_asset_24)
-            "ai and machine learning" -> binding.logo.setImageResource(R.drawable.ic_ai_24)
-            else -> binding.logo.setImageResource(R.drawable.ic_shorts_24)
+            "game development" -> binding.logo.setImageResource(R.drawable.game)
+            "ai and machine learning" -> binding.logo.setImageResource(R.drawable.aiml)
+            else -> binding.logo.setImageResource(R.drawable.ic_close_24)
         }
         when (topic) {
             "web development" -> binding.root.background = ContextCompat.getDrawable(this, R.drawable.gradient_web)
