@@ -4,6 +4,7 @@ import SubTopicAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.a5mindev.databinding.ActivitySubTopicScreenBinding
@@ -19,7 +20,7 @@ class SubTopicScreen : AppCompatActivity() {
         setContentView(binding.root)
 
         topic = intent.getStringExtra("topic") ?: "Unknown"
-        binding.tvTopics.text = topic
+        binding.tvSubTopics.text = topic
         subtopics = getSubtopicsForTopic(topic)
         changeLogoImage(topic.lowercase())
 
@@ -32,7 +33,7 @@ class SubTopicScreen : AppCompatActivity() {
         } else {
             Log.w("SubTopicScreen", "No subtopics found for topic: $topic")
         }
-        binding.tvTopics.setOnClickListener {
+        binding.tvSubTopics.setOnClickListener {
             finish()
         }
     }
@@ -71,10 +72,10 @@ class SubTopicScreen : AppCompatActivity() {
         }
         when (topic) {
             "web development" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.spaceblue))
-            "app development" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.oldMandarin))
+            "app development" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.shinshu))
             "game development" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.parisianNight))
             "ai and machine learning" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.bayou))
-            else -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.oldMandarin))
+            else -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.shinshu))
         }
     }
 }
