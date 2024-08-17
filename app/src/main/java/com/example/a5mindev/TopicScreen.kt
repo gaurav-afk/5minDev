@@ -57,10 +57,10 @@ class TopicScreen : AppCompatActivity() {
         binding.cardGame.topic.text = "Game development"
         binding.cardAiml.topic.text = "AI/ML"
 
-        binding.cardWeb.topicDescription.text = "blending what we see with the hidden work that makes it all run smoothly."
-        binding.cardApp.topicDescription.text = "crafting digital dreams, where design and code blend to make your device come alive."
-        binding.cardGame.topicDescription.text = "sculpting realms of play, where creativity and code dance to spark adventure and fun."
-        binding.cardAiml.topicDescription.text = "molding the future, where data and algorithms blend to create machines that learn and think."
+        binding.cardWeb.topicDescription.text = "Blending what we see with the hidden work that makes it all run smoothly."
+        binding.cardApp.topicDescription.text = "Crafting digital dreams, where design and code blend to make your device come alive."
+        binding.cardGame.topicDescription.text = "Sculpting realms of play, where creativity and code dance to spark adventure and fun."
+        binding.cardAiml.topicDescription.text = "Molding the future, where data and algorithms blend to create machines that learn and think."
 
         binding.cardWeb.customTopicCard.setCardBackgroundColor(getColor(R.color.web_color))
         binding.cardApp.customTopicCard.setCardBackgroundColor(getColor(R.color.app_color))
