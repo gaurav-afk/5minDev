@@ -1,2 +1,2 @@
 # 5minDev
- ![image](https://github.com/user-attachments/assets/983a7487-f4d2-40c7-8694-83f971286042)
+![homePage](https://github.com/user-attachments/assets/b8fad2c9-c188-4f8e-b1a8-0ea5b55a3efc)
