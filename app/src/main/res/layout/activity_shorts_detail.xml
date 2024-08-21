@@ -37,10 +37,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_title"
+                    android:id="@+id/tv_desc_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColorHint="@color/gold"
+                    android:hint="title"
                     android:textColor="@color/gold"
                     android:textSize="18sp"
                     android:paddingTop="8dp"
@@ -51,6 +52,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
+                    android:hint="description"
+                    android:textColorHint="@color/white"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp" />
 
@@ -58,6 +61,8 @@
                     android:id="@+id/tv_keyPoints"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="keyPoints"
+                    android:textColorHint="@color/white"
                     android:textColor="@color/white"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp" />
@@ -67,6 +72,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
+                    android:hint="conclusion"
+                    android:textColorHint="@color/white"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp" />
             </LinearLayout>

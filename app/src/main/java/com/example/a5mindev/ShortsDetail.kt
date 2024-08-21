@@ -1,6 +1,7 @@
 package com.example.a5mindev
 
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a5mindev.databinding.ActivityShortsDetailBinding
 
@@ -9,12 +10,13 @@ class ShortsDetail : AppCompatActivity() {
     private var title: String? = null
     private var description: String? = null
     private var keyPoints: String? = null
+    private var examples: String? = null
     private var conclusion: String? = null
     private lateinit var binding: ActivityShortsDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        enableEdgeToEdge()
         binding = ActivityShortsDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -23,7 +25,7 @@ class ShortsDetail : AppCompatActivity() {
         keyPoints = intent.getStringExtra(ARG_KEY_POINTS)
         conclusion = intent.getStringExtra(ARG_CONCLUSION)
 
-        binding.tvTitle.text = title
+        binding.tvDescTitle.text = title
         binding.tvDescription.text = description
         binding.tvKeyPoints.text = keyPoints
         binding.tvConclusion.text = conclusion
