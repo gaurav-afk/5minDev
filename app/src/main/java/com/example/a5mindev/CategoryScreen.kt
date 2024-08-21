@@ -1,6 +1,8 @@
 package com.example.a5mindev
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -12,13 +14,16 @@ class CategoryScreen : AppCompatActivity() {
     private lateinit var binding: ActivityCategoryScreenBinding
     private lateinit var flexboxLayout: FlexboxLayout
     private lateinit var categories: List<String>
+    private lateinit var topic: String
+    private lateinit var subTopic: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        topic = intent.getStringExtra("topic").orEmpty()
+        subTopic = intent.getStringExtra("subTopic").orEmpty()
         binding = ActivityCategoryScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         flexboxLayout = binding.flexboxLayout
-        val subTopic = intent.getStringExtra("subTopic") ?: "Unknown"
         categories = getCategoriesForSubtopic(subTopic.lowercase())
         binding.tvGoBack.text = subTopic
         binding.tvGoBack.setOnClickListener{
@@ -26,7 +31,6 @@ class CategoryScreen : AppCompatActivity() {
         }
         displayCategories(categories)
     }
-
 
 
     private fun getCategoriesForSubtopic(subTopic: String): List<String> {
@@ -71,7 +75,19 @@ class CategoryScreen : AppCompatActivity() {
             val categoryView = LayoutInflater.from(this).inflate(R.layout.item_category, flexboxLayout, false)
             val button = categoryView.findViewById<Button>(R.id.btn_category)
             button.text = category
+            button.setOnClickListener{
+                handleButtonClick(category)
+            }
             flexboxLayout.addView(categoryView)
         }
+    }
+
+    private fun handleButtonClick(category: String) {
+        val openShorts = Intent(this, FiveShorts::class.java)
+        Log.i("category:",category)
+        openShorts.putExtra("topic", topic)
+        openShorts.putExtra("subTopic", subTopic)
+        openShorts.putExtra("category", category)
+        startActivity(openShorts)
     }
 }

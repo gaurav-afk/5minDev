@@ -37,7 +37,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Placeholder views to mimic list items -->
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
@@ -77,16 +76,17 @@
 
         </com.facebook.shimmer.ShimmerFrameLayout>
 
-        <!-- Actual ListView, initially hidden -->
         <ListView
             android:id="@+id/lv_shorts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2000dp"
+            android:layout_marginTop="20dp"
             android:divider="@android:color/transparent"
             android:dividerHeight="15dp"
             android:visibility="gone"
-            tools:listitem="@layout/item_shorts" />
+            app:layout_constraintTop_toBottomOf="@+id/shimmer_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </LinearLayout>
 </ScrollView>
