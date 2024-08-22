@@ -2,14 +2,11 @@ package com.example.a5mindev
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.CalendarContract.Colors
 import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.a5mindev.databinding.ActivityTopicScreenBinding
 
 class TopicScreen : AppCompatActivity() {
@@ -30,7 +27,6 @@ class TopicScreen : AppCompatActivity() {
     private fun handleButtonClick(data: String) {
         val openSubTopicPage = Intent(this, SubTopicScreen::class.java)
         openSubTopicPage.putExtra("topic", data)
-
         startActivity(openSubTopicPage)
     }
 
@@ -39,10 +35,13 @@ class TopicScreen : AppCompatActivity() {
         binding = ActivityTopicScreenBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-
         setCardData()
 
-
+        binding.tvRecentShorts.setOnClickListener{
+            val openSubTopicPage = Intent(this, FiveShorts::class.java)
+            openSubTopicPage.putExtra("fromTopic", true)
+            startActivity(openSubTopicPage)
+        }
         binding.cardWeb.customTopicCard.setOnClickListener(topicButtonClickListener)
         binding.cardApp.customTopicCard.setOnClickListener(topicButtonClickListener)
         binding.cardGame.customTopicCard.setOnClickListener(topicButtonClickListener)
@@ -77,4 +76,6 @@ class TopicScreen : AppCompatActivity() {
         binding.cardGame.logo.setColorFilter(ContextCompat.getColor(this, R.color.white))
         binding.cardAiml.logo.setColorFilter(ContextCompat.getColor(this, R.color.aiml_logo_color))
     }
+
+
 }

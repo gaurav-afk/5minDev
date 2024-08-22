@@ -16,6 +16,9 @@
         android:theme="@style/Theme._5MinDev"
         tools:targetApi="31">
         <activity
+            android:name=".RecentShorts"
+            android:exported="false" />
+        <activity
             android:name=".TopicScreen"
             android:exported="false" />
         <activity

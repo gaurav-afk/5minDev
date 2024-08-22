@@ -6,8 +6,9 @@ import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.a5mindev.data.ShortsDatabase
 import com.example.a5mindev.databinding.ActivityFiveShortsBinding
-import com.example.a5mindev.sampledata.Shorts
+import com.example.a5mindev.data.Shorts
 import com.google.ai.client.generativeai.GenerativeModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -15,7 +16,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONException
-import org.json.JSONObject
 
 class FiveShorts : AppCompatActivity() {
     lateinit var binding: ActivityFiveShortsBinding
@@ -24,9 +24,11 @@ class FiveShorts : AppCompatActivity() {
         val topic = intent.getStringExtra("topic").orEmpty()
         val subTopic = intent.getStringExtra("subTopic").orEmpty()
         val category = intent.getStringExtra("category").orEmpty()
+        val fromTopic = intent.getBooleanExtra("fromTopic", false)
         binding = ActivityFiveShortsBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
+
         val query =
             """Create five summaries, each around 300 words, on the $topic, $subTopic especially focusing on it's category $category. Ensure each summary is random and should not be repeated and is detailed and directly related to the subtopic. Each summary should include:
             - **Title:** A concise and relevant title.
@@ -46,7 +48,13 @@ make sure it's in the following exact format:
   },
 ]```
 """
-        fetchResponse(query)
+
+        if(fromTopic){
+            val shortsList = getShortsFromDatabase()
+            displayShorts(shortsList)
+        }else {
+            fetchResponse(query)
+        }
         binding.tvGoBack.setOnClickListener {
             finish()
         }
@@ -69,6 +77,7 @@ make sure it's in the following exact format:
                 val shortsList = parseResponse(response)
                 withContext(Dispatchers.Main) {
                     displayShorts(shortsList)
+                    saveShortsToDatabase(shortsList)
                 }
                 Log.i("response: ", response)
             } catch (e: Exception) {
@@ -124,13 +133,33 @@ make sure it's in the following exact format:
                 val keyPoints = jsonObject.optString("keyPoints", "")
                 val conclusion = jsonObject.optString("conclusion", "")
 
-                shortsList.add(Shorts(title, description, keyPoints, conclusion))
+                shortsList.add(Shorts( title, description, keyPoints, conclusion))
             }
         } catch (e: JSONException) {
             Log.e("FiveShortsFragment", "Error parsing JSON response: ${e.message}", e)
         }
 
         Log.d("Parsed Shorts List", shortsList.toString())
+        return shortsList
+    }
+    private fun saveShortsToDatabase(shortsList: List<Shorts>) {
+        val db = ShortsDatabase.getDatabase(this)
+        CoroutineScope(Dispatchers.IO).launch {
+            db.shortsDao().deleteAllShorts()
+            db.shortsDao().insertAll(*shortsList.toTypedArray())
+        }
+    }
+
+    private fun getShortsFromDatabase(): List<Shorts> {
+        val db = ShortsDatabase.getDatabase(this)
+        var shortsList: List<Shorts> = emptyList()
+        CoroutineScope(Dispatchers.IO).launch {
+            shortsList = db.shortsDao().getAllShorts()
+            withContext(Dispatchers.Main) {
+                Log.i("roomdb:", shortsList.toString())
+                displayShorts(shortsList)
+            }
+        }
         return shortsList
     }
 }
