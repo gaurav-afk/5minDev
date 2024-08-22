@@ -9,18 +9,44 @@
     android:paddingHorizontal="20dp"
     tools:context=".TopicScreen">
 
-    <TextView
-        android:id="@+id/tv_topics"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/ll_topic_page_header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/_5mindev"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="28sp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_topics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/_5mindev"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/tv_recent_shorts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:textAlignment="textEnd"
+            android:text="Recent"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="14sp" />
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/ic_recent_24"
+            app:tint="@color/gold" />
+    </LinearLayout>
+
 
     <ScrollView
         android:layout_width="0dp"
@@ -28,7 +54,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_topics">
+        app:layout_constraintTop_toBottomOf="@id/ll_topic_page_header">
 
         <LinearLayout
             android:layout_width="match_parent"

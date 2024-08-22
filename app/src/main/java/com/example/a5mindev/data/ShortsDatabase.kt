@@ -1,0 +1,28 @@
+package com.example.a5mindev.data
+
+import android.content.Context
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
+
+@Database(entities = [Shorts::class], version = 1)
+abstract class ShortsDatabase : RoomDatabase() {
+    abstract fun shortsDao(): ShortsDao
+
+    companion object {
+        @Volatile
+        private var INSTANCE: ShortsDatabase? = null
+
+        fun getDatabase(context: Context): ShortsDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    ShortsDatabase::class.java,
+                    "shorts_database"
+                ).build()
+                INSTANCE = instance
+                instance
+            }
+        }
+    }
+}
