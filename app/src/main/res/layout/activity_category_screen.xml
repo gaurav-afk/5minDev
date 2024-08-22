@@ -2,27 +2,31 @@
 <com.google.android.flexbox.FlexboxLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:flexbox="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/flexbox_layout"
     android:background="@drawable/gradient_category"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     flexbox:flexDirection="row"
     flexbox:flexWrap="wrap"
-    android:padding="16dp">
+    android:paddingHorizontal="20dp"
+    android:paddingBottom="30dp">
 
     <TextView
         android:id="@+id/tv_go_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
-        android:drawableLeft="@drawable/ic_back_arrow_24"
         android:drawablePadding="5dp"
-        android:drawableTint="@color/white"
-        android:paddingTop="40dp"
-        android:paddingBottom="30dp"
-        android:gravity="center_vertical"
-        android:text="@string/goback"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/web_development"
         android:textColor="@color/grey"
-        android:textSize="20sp" />
+        android:textSize="24sp"
+        app:drawableLeftCompat="@drawable/ic_back_arrow_24"
+        app:drawableTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </com.google.android.flexbox.FlexboxLayout>

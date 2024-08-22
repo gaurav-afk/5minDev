@@ -30,7 +30,7 @@ class ShortsDetail : AppCompatActivity() {
         binding.tvKeyPoints.text = keyPoints
         binding.tvConclusion.text = conclusion
 
-        binding.tvGoBack.setOnClickListener {
+        binding.tvDescGoBack.setOnClickListener {
             finish()
         }
     }
