@@ -49,12 +49,11 @@ class TopicScreen : AppCompatActivity() {
     }
 
     private fun setCardData() {
-
-
-        binding.cardWeb.topic.text = "Web development"
-        binding.cardApp.topic.text = "App development"
-        binding.cardGame.topic.text = "Game development"
-        binding.cardAiml.topic.text = "AI/ML"
+        
+        binding.cardWeb.tvTopic.text = "Web development"
+        binding.cardApp.tvTopic.text = "App development"
+        binding.cardGame.tvTopic.text = "Game development"
+        binding.cardAiml.tvTopic.text = "AI/ML"
 
         binding.cardWeb.topicDescription.text = "Blending what we see with the hidden work that makes it all run smoothly."
         binding.cardApp.topicDescription.text = "Crafting digital dreams, where design and code blend to make your device come alive."
@@ -66,15 +65,15 @@ class TopicScreen : AppCompatActivity() {
         binding.cardGame.customTopicCard.setCardBackgroundColor(getColor(R.color.game_color))
         binding.cardAiml.customTopicCard.setCardBackgroundColor(getColor(R.color.aiml_color))
 
-        binding.cardWeb.logo.setImageResource(R.drawable.internet)
-        binding.cardApp.logo.setImageResource(R.drawable.ic_smartphone_24)
-        binding.cardGame.logo.setImageResource(R.drawable.game)
-        binding.cardAiml.logo.setImageResource(R.drawable.aiml)
+        binding.cardWeb.tvLogo.setImageResource(R.drawable.internet)
+        binding.cardApp.tvLogo.setImageResource(R.drawable.ic_smartphone_24)
+        binding.cardGame.tvLogo.setImageResource(R.drawable.game)
+        binding.cardAiml.tvLogo.setImageResource(R.drawable.aiml)
 
-        binding.cardWeb.logo.setColorFilter(ContextCompat.getColor(this, R.color.green))
-        binding.cardApp.logo.setColorFilter(ContextCompat.getColor(this, R.color.white))
-        binding.cardGame.logo.setColorFilter(ContextCompat.getColor(this, R.color.white))
-        binding.cardAiml.logo.setColorFilter(ContextCompat.getColor(this, R.color.aiml_logo_color))
+        binding.cardWeb.tvLogo.setColorFilter(ContextCompat.getColor(this, R.color.green))
+        binding.cardApp.tvLogo.setColorFilter(ContextCompat.getColor(this, R.color.white))
+        binding.cardGame.tvLogo.setColorFilter(ContextCompat.getColor(this, R.color.white))
+        binding.cardAiml.tvLogo.setColorFilter(ContextCompat.getColor(this, R.color.aiml_logo_color))
     }
 
 
