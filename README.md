@@ -66,33 +66,37 @@ cd 5mindev-app
 
 ## Key Dependencies
 
-a. Kotlin Coroutines: For asynchronous programming.
- 
-b. Room Database: For local storage of summaries.
-  
-c. Gemini AI API Client: For generating content.
-  
-d. Shimmer: For loading animations.
-  
-e. ConstraintLayout: For modern UI layouts.
+- **Kotlin Coroutines**: For asynchronous programming.
+- **Room Database**: For local storage of summaries.
+- **Gemini AI API Client**: For generating content.
+- **Shimmer**: For loading animations.
+- **ConstraintLayout**: For modern UI layouts.
 
 ## Usage
 
-1. Select a Topic: Choose a topic from the main screen (e.g., Web Development, App Development).
-   
-2. View Summaries: The app will generate five unique summaries. You can tap on any summary to view details.
-  
-3. Access Offline: Previously generated summaries are saved locally and can be viewed without an internet connection.
-  
-##  Contributing
+1. **Select a Topic**: Choose a topic from the main screen (e.g., Web Development, App Development).
+2. **View Summaries**: The app will generate five unique summaries. You can tap on any summary to view details.
+3. **Access Offline**: Previously generated summaries are saved locally and can be viewed without an internet connection.
 
-Contributions to the 5-Min Dev are greatly appreciated. Please follow these steps to contribute:
+## Contributing
 
-1. Fork the repository.
-2. Create a new branch (git checkout -b feature-branch).
-3. Commit your changes (git commit -m 'Add some feature').
-4. Push to the branch (git push origin feature-branch).
-5. Create a pull request.
+Contributions to the 5-Min Dev app are greatly appreciated. Please follow these steps to contribute:
+
+1. **Fork the repository**.
+2. **Create a new branch**:
+    ```bash
+    git checkout -b feature-branch
+    ```
+3. **Commit your changes**:
+    ```bash
+    git commit -m 'Add some feature'
+    ```
+4. **Push to the branch**:
+    ```bash
+    git push origin feature-branch
+    ```
+5. **Create a pull request**.
+
 
 ##  License
 This project is licensed under the MIT License. See the LICENSE file for details.
