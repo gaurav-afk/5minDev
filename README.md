@@ -14,14 +14,14 @@ Welcome to the 5-Min Dev app! This Android application provides quick and insigh
 
 ## Screenshots
 
-<img src="https://github.com/user-attachments/assets/ad1facf8-fda1-45be-933f-88edfad9c8ef" width="200" height="450">
-<img src="https://github.com/user-attachments/assets/da640c9f-4afe-45fa-954d-977d1c72b50d" width="200" height="450">
-<img src="https://github.com/user-attachments/assets/769fc4a1-fbc5-418a-ba64-04b533ea392f" width="200" height="450">
-<img src="https://github.com/user-attachments/assets/96726c04-8b68-4f86-b7d3-f6123c682c30" width="200" height="450">
-<img src="https://github.com/user-attachments/assets/b719b134-3cdb-4626-9c9e-2b0b9623d1ae" width="200" height="450">
-<img src="https://github.com/user-attachments/assets/afc26e79-2b1a-4000-a764-5c0c4428d52f" width="200" height="450">
-<img src="https://github.com/user-attachments/assets/bb3fec77-5f15-4deb-9bfb-28ea94b3e1aa" width="200" height="450">
-<img src="https://github.com/user-attachments/assets/417f3483-5707-49d2-89ed-3862f2fde2f5" width="200" height="450">
+<img src="https://github.com/user-attachments/assets/ad1facf8-fda1-45be-933f-88edfad9c8ef" width="200" height="400">
+<img src="https://github.com/user-attachments/assets/da640c9f-4afe-45fa-954d-977d1c72b50d" width="200" height="400">
+<img src="https://github.com/user-attachments/assets/769fc4a1-fbc5-418a-ba64-04b533ea392f" width="200" height="400">
+<img src="https://github.com/user-attachments/assets/96726c04-8b68-4f86-b7d3-f6123c682c30" width="200" height="400">
+<img src="https://github.com/user-attachments/assets/b719b134-3cdb-4626-9c9e-2b0b9623d1ae" width="200" height="400">
+<img src="https://github.com/user-attachments/assets/afc26e79-2b1a-4000-a764-5c0c4428d52f" width="200" height="400">
+<img src="https://github.com/user-attachments/assets/bb3fec77-5f15-4deb-9bfb-28ea94b3e1aa" width="200" height="400">
+<img src="https://github.com/user-attachments/assets/417f3483-5707-49d2-89ed-3862f2fde2f5" width="200" height="400">
 
 
 
