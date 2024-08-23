@@ -41,26 +41,28 @@ cd 5mindev-app
 
 ## Project Structure
 
-1. Activities:
+1. **Activities**:
 
- a. TopicScreen: Main screen where users select a development topic.
- 
- b. SubTopicScreen: Screen for selecting subtopics and categories under the chosen topic.
- 
- c. FiveShorts: Displays five summaries generated for the selected topic, subtopic, and category.
- 
- d. ShortsDetail: Shows detailed information about a specific summary.
+    a. **TopicScreen**: Main screen where users select a development topic.
+    
+    b. **SubTopicScreen**: Screen for selecting subtopics and categories under the chosen topic.
+    
+    c. **FiveShorts**: Displays five summaries generated for the selected topic, subtopic, and category.
+    
+    d. **ShortsDetail**: Shows detailed information about a specific summary.
 
-2. Data Layer:
+2. **Data Layer**:
 
-  a. Shorts: Data class representing a single summary.
-  
-  b. ShortsDatabase: Room database for storing and retrieving summaries.
-  
-  c. ShortsDao: Data Access Object (DAO) for database operations.
+    a. **Shorts**: Data class representing a single summary.
+    
+    b. **ShortsDatabase**: Room database for storing and retrieving summaries.
+    
+    c. **ShortsDao**: Data Access Object (DAO) for database operations.
 
-3. Networking:
-  a. Uses GenerativeModel class to fetch summaries from the Gemini AI API.
+3. **Networking**:
+
+    a. Uses `GenerativeModel` class to fetch summaries from the Gemini AI API.
+
 
 ## Key Dependencies
 
