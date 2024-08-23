@@ -44,8 +44,11 @@ cd 5mindev-app
 1. Activities:
 
  a. TopicScreen: Main screen where users select a development topic.
+ 
  b. SubTopicScreen: Screen for selecting subtopics and categories under the chosen topic.
+ 
  c. FiveShorts: Displays five summaries generated for the selected topic, subtopic, and category.
+ 
  d. ShortsDetail: Shows detailed information about a specific summary.
 
 2. Data Layer:
