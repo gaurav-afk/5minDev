@@ -3,12 +3,12 @@
 Welcome to the 5-Min Dev app! This Android application provides quick and insightful summaries across various topics like Web Development, App Development, Game Development, and AI/Machine Learning. The app generates detailed, easy-to-understand summaries for developers and enthusiasts looking to learn about different subtopics within these domains.
 
 ## Features
-Dynamic Content Generation: Fetches detailed summaries on various topics using the Gemini AI API.
-Topic Selection: Choose from categories such as Web Development, App Development, Game Development, and AI/ML.
-Five Summaries: Generates five unique summaries for the selected topic and subtopic.
-Summary Display: View summaries with a title, description, key points, and a conclusion.
-Offline Access: Previously generated summaries are saved locally using Room Database and can be accessed offline.
-Edge-to-Edge UI: Modern UI design with edge-to-edge support for a seamless user experience.
+
+- **Dynamic Content Generation**: Fetches detailed summaries on various topics using the Gemini AI API.
+- **Topic Selection**: Choose from categories such as Web Development, App Development, Game Development, and AI/ML.
+- **Five Summaries**: Generates five unique summaries for the selected topic and subtopic.
+- **Summary Display**: View summaries with a title, description, key points, and a conclusion.
+- **Offline Access**: Previously generated summaries are saved locally using Room Database and can be accessed offline.
 
 ## Screenshots
 
