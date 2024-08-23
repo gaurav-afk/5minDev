@@ -37,7 +37,7 @@
             android:textAlignment="textEnd"
             android:text="Recent"
             android:textColor="@color/cardview_light_background"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
         <ImageView
             android:id="@+id/logo"
             android:layout_width="25dp"
