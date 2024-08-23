@@ -24,6 +24,12 @@ class TopicScreen : AppCompatActivity() {
         Log.i("topic",data)
     }
 
+    private val clickListener_for_recent = View.OnClickListener {
+        val openSubTopicPage = Intent(this, FiveShorts::class.java)
+        openSubTopicPage.putExtra("fromTopic", true)
+        startActivity(openSubTopicPage)
+    }
+
     private fun handleButtonClick(data: String) {
         val openSubTopicPage = Intent(this, SubTopicScreen::class.java)
         openSubTopicPage.putExtra("topic", data)
@@ -37,11 +43,9 @@ class TopicScreen : AppCompatActivity() {
         setContentView(binding.root)
         setCardData()
 
-        binding.tvRecentShorts.setOnClickListener{
-            val openSubTopicPage = Intent(this, FiveShorts::class.java)
-            openSubTopicPage.putExtra("fromTopic", true)
-            startActivity(openSubTopicPage)
-        }
+        binding.tvRecentShorts.setOnClickListener(clickListener_for_recent)
+        binding.logoRecent.setOnClickListener(clickListener_for_recent)
+
         binding.cardWeb.customTopicCard.setOnClickListener(topicButtonClickListener)
         binding.cardApp.customTopicCard.setOnClickListener(topicButtonClickListener)
         binding.cardGame.customTopicCard.setOnClickListener(topicButtonClickListener)
