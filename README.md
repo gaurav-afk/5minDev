@@ -64,15 +64,15 @@ cd 5mindev-app
 
 ## Key Dependencies
 
-  a. Kotlin Coroutines: For asynchronous programming.
+a. Kotlin Coroutines: For asynchronous programming.
   
-  b. Room Database: For local storage of summaries.
+b. Room Database: For local storage of summaries.
   
-  c. Gemini AI API Client: For generating content.
+c. Gemini AI API Client: For generating content.
   
-  d. Shimmer: For loading animations.
+d. Shimmer: For loading animations.
   
-  e. ConstraintLayout: For modern UI layouts.
+e. ConstraintLayout: For modern UI layouts.
 
 ## Usage
 
