@@ -12,10 +12,13 @@ Welcome to the 5-Min Dev app! This Android application provides quick and insigh
 
 ## Screenshots
 
-Getting Started
-Prerequisites
-Kotlin 1.7 or later
-An active API key for the Gemini AI API
+## Getting Started
+
+### Prerequisites
+
+- **Kotlin**: Version 1.7 or later.
+- **Gemini AI API Key**: An active API key for accessing the Gemini AI API.
+
 
 Installation
 1. Clone the Repository:
