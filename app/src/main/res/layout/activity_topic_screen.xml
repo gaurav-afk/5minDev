@@ -28,7 +28,6 @@
             android:text="@string/_5mindev"
             android:textColor="@color/cardview_light_background"
             android:textSize="28sp" />
-
         <TextView
             android:id="@+id/tv_recent_shorts"
             android:layout_width="wrap_content"
@@ -39,12 +38,13 @@
             android:textColor="@color/cardview_light_background"
             android:textSize="16sp" />
         <ImageView
-            android:id="@+id/logo"
-            android:layout_width="25dp"
-            android:layout_height="30dp"
+            android:id="@+id/logo_recent"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
             android:layout_marginTop="70dp"
             android:src="@drawable/ic_recent_24"
             app:tint="@color/gold" />
+
     </LinearLayout>
 
 

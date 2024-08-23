@@ -1,14 +1,17 @@
 package com.example.a5mindev
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a5mindev.databinding.ActivityCategoryScreenBinding
 import com.google.android.flexbox.FlexboxLayout
+import java.util.concurrent.TimeUnit
 
 class CategoryScreen : AppCompatActivity() {
     private lateinit var binding: ActivityCategoryScreenBinding
@@ -16,9 +19,19 @@ class CategoryScreen : AppCompatActivity() {
     private lateinit var categories: List<String>
     private lateinit var topic: String
     private lateinit var subTopic: String
+    private lateinit var sharedPreferences: SharedPreferences
+
+    companion object {
+        private const val PREFS_NAME = "SubTopicPrefs"
+        private const val LAST_VISIT_KEY = "lastVisit"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        sharedPreferences = getSharedPreferences(CategoryScreen.PREFS_NAME, MODE_PRIVATE)
+
         topic = intent.getStringExtra("topic").orEmpty()
         subTopic = intent.getStringExtra("subTopic").orEmpty()
         binding = ActivityCategoryScreenBinding.inflate(layoutInflater)
@@ -82,12 +95,52 @@ class CategoryScreen : AppCompatActivity() {
         }
     }
 
+
+
     private fun handleButtonClick(category: String) {
-        val openShorts = Intent(this, FiveShorts::class.java)
-        Log.i("category:",category)
-        openShorts.putExtra("topic", topic)
-        openShorts.putExtra("subTopic", subTopic)
-        openShorts.putExtra("category", category)
-        startActivity(openShorts)
+        val lastVisitTimestamp = sharedPreferences.getLong(LAST_VISIT_KEY, 0)
+        val currentTime = System.currentTimeMillis()
+        if (currentTime - lastVisitTimestamp >= TimeUnit.DAYS.toMillis(1)) {
+            val openShorts = Intent(this, FiveShorts::class.java)
+            Log.i("category:", category)
+            openShorts.putExtra("topic", topic)
+            openShorts.putExtra("subTopic", subTopic)
+            openShorts.putExtra("category", category)
+            startActivity(openShorts)
+
+            sharedPreferences.edit().putLong(LAST_VISIT_KEY, currentTime).apply()
+        } else {
+            showAlert()
+        }
     }
+
+    private fun getRemainingTime(): String {
+        val lastAccessTime = sharedPreferences.getLong(LAST_VISIT_KEY, 0L)
+        val currentTime = System.currentTimeMillis()
+        val oneDayInMillis = 24 * 60 * 60 * 1000 // 24 hours in milliseconds
+
+        val nextAllowedTime = lastAccessTime + oneDayInMillis
+        var remainingTimeMillis = nextAllowedTime - currentTime
+
+        val hours = (remainingTimeMillis / (1000 * 60 * 60)).toInt()
+        val minutes = ((remainingTimeMillis % (1000 * 60 * 60)) / (1000 * 60)).toInt()
+        val seconds = ((remainingTimeMillis % (1000 * 60)) / 1000).toInt()
+
+        Log.i("timer:", "$hours h, $minutes m, $seconds s.")
+        return "$hours h $minutes m"
+    }
+
+
+
+    private fun showAlert() {
+        val remainingTimeMessage = getRemainingTime()
+
+        AlertDialog.Builder(this)
+            .setTitle("Access Restricted")
+            .setMessage("$remainingTimeMessage \nYou can only generate shorts once per day. Please try again tommorow.")
+            .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+            .create()
+            .show()
+    }
+
 }
