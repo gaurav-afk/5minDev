@@ -27,43 +27,43 @@ cd 5mindev-app
 
 2. Open in Android Studio:
 
-Open Android Studio, and select the 5mindev-app folder to open the project.
+  Open Android Studio, and select the 5mindev-app folder to open the project.
 
 3. Add API Key:
 
-In local.properties, add your API key for the Gemini AI API:
+  In local.properties, add your API key for the Gemini AI API:
 
 ``API_KEY=your_api_key_here``
 
 4. Build and Run:
 
-Sync the project with Gradle files, build the project, and run it on an emulator or physical device.
+  Sync the project with Gradle files, build the project, and run it on an emulator or physical device.
 
 ## Project Structure
 
 1. Activities:
 
-a. TopicScreen: Main screen where users select a development topic.
-b. SubTopicScreen: Screen for selecting subtopics and categories under the chosen topic.
-c. FiveShorts: Displays five summaries generated for the selected topic, subtopic, and category.
-d. ShortsDetail: Shows detailed information about a specific summary.
+  a. TopicScreen: Main screen where users select a development topic.
+  b. SubTopicScreen: Screen for selecting subtopics and categories under the chosen topic.
+  c. FiveShorts: Displays five summaries generated for the selected topic, subtopic, and category.
+  d. ShortsDetail: Shows detailed information about a specific summary.
 
 2. Data Layer:
 
-a. Shorts: Data class representing a single summary.
-b. ShortsDatabase: Room database for storing and retrieving summaries.
-c. ShortsDao: Data Access Object (DAO) for database operations.
+  a. Shorts: Data class representing a single summary.
+  b. ShortsDatabase: Room database for storing and retrieving summaries.
+  c. ShortsDao: Data Access Object (DAO) for database operations.
 
 3. Networking:
-a. Uses GenerativeModel class to fetch summaries from the Gemini AI API.
+  a. Uses GenerativeModel class to fetch summaries from the Gemini AI API.
 
 ## Key Dependencies
 
-a. Kotlin Coroutines: For asynchronous programming.
-b. Room Database: For local storage of summaries.
-c. Gemini AI API Client: For generating content.
-d. Shimmer: For loading animations.
-e. ConstraintLayout: For modern UI layouts.
+  a. Kotlin Coroutines: For asynchronous programming.
+  b. Room Database: For local storage of summaries.
+  c. Gemini AI API Client: For generating content.
+  d. Shimmer: For loading animations.
+  e. ConstraintLayout: For modern UI layouts.
 
 ## Usage
 
