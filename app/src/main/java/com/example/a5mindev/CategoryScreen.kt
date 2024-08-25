@@ -100,6 +100,7 @@ class CategoryScreen : AppCompatActivity() {
     private fun handleButtonClick(category: String) {
         val lastVisitTimestamp = sharedPreferences.getLong(LAST_VISIT_KEY, 0)
         val currentTime = System.currentTimeMillis()
+        Log.i("lastVisitTimestamp:",lastVisitTimestamp.toString())
         if (currentTime - lastVisitTimestamp >= TimeUnit.DAYS.toMillis(1)) {
             val openShorts = Intent(this, FiveShorts::class.java)
             Log.i("category:", category)
@@ -117,7 +118,7 @@ class CategoryScreen : AppCompatActivity() {
     private fun getRemainingTime(): String {
         val lastAccessTime = sharedPreferences.getLong(LAST_VISIT_KEY, 0L)
         val currentTime = System.currentTimeMillis()
-        val oneDayInMillis = 24 * 60 * 60 * 1000 // 24 hours in milliseconds
+        val oneDayInMillis = 24 * 60 * 60 * 1000
 
         val nextAllowedTime = lastAccessTime + oneDayInMillis
         var remainingTimeMillis = nextAllowedTime - currentTime
