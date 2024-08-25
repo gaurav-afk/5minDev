@@ -24,6 +24,11 @@ Welcome to the 5-Min Dev app! This Android application provides quick and insigh
 <img src="https://github.com/user-attachments/assets/417f3483-5707-49d2-89ed-3862f2fde2f5" width="200" height="400">
 
 
+<img src="https://github.com/user-attachments/assets/10a5a3a9-df87-4f70-b947-0932b424bf82" width="200" height="400">
+<img src="https://github.com/user-attachments/assets/ae43e78b-6ee0-47d5-847f-186ed8bc20e3" width="200" height="400">
+<img src="https://github.com/user-attachments/assets/6e42c834-05ed-42dd-85ba-d12bdfb87843" width="200" height="400">
+<img src="https://github.com/user-attachments/assets/f9958a78-f7e4-478d-9407-9636c2a236f6" width="200" height="400">
+<img src="https://github.com/user-attachments/assets/5ba6a4bf-cbc2-4c4e-b6a6-f9aac93aec33" width="200" height="400">
 
 
 
