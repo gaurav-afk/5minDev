@@ -65,7 +65,7 @@ class TopicScreen : AppCompatActivity() {
         binding.cardAiml.topicDescription.text = "Molding the future, where data and algorithms blend to create machines that learn and think."
 
         binding.cardWeb.customTopicCard.setCardBackgroundColor(getColor(R.color.web_color))
-        binding.cardApp.customTopicCard.setCardBackgroundColor(getColor(R.color.app_color))
+        binding.cardApp.customTopicCard.setCardBackgroundColor(getColor(R.color.exp))
         binding.cardGame.customTopicCard.setCardBackgroundColor(getColor(R.color.game_color))
         binding.cardAiml.customTopicCard.setCardBackgroundColor(getColor(R.color.aiml_color))
 

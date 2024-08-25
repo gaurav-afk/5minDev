@@ -7,7 +7,7 @@
     android:layout_marginHorizontal="10dp"
     android:clickable="true"
     android:focusable="true"
-    app:cardBackgroundColor="@color/bayou"
+    app:cardBackgroundColor="@color/exp"
     app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
