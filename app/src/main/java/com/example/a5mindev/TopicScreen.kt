@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -50,6 +51,12 @@ class TopicScreen : AppCompatActivity() {
         binding.cardApp.customTopicCard.setOnClickListener(topicButtonClickListener)
         binding.cardGame.customTopicCard.setOnClickListener(topicButtonClickListener)
         binding.cardAiml.customTopicCard.setOnClickListener(topicButtonClickListener)
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finishAndRemoveTask()
+            }
+        })
     }
 
     private fun setCardData() {
@@ -80,5 +87,10 @@ class TopicScreen : AppCompatActivity() {
         binding.cardAiml.tvLogo.setColorFilter(ContextCompat.getColor(this, R.color.aiml_logo_color))
     }
 
-
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        moveTaskToBack(true)
+        finish()
+    }
 }
