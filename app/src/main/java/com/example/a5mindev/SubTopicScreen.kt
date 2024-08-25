@@ -72,7 +72,7 @@ class SubTopicScreen : AppCompatActivity() {
         }
         when (topic) {
             "web development" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.spaceblue))
-            "app development" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.shinshu))
+            "app development" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.freshCinnamon))
             "game development" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.parisianNight))
             "ai and machine learning" -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.bayou))
             else -> binding.logo.setColorFilter(ContextCompat.getColor(this, R.color.shinshu))

@@ -19,7 +19,11 @@
     <color name="game_color">#2D2632</color>
     <color name="aiml_color">#293331</color>
     <color name="aiml_logo_color">#6DB3B3</color>
-    <color name="exp">#4c3597</color>
+    <color name="freshCinnamon">#9e530d</color>
+    <color name="alloyOrange">#c1630b</color>
+    <color name="galacticPurple">#4c3597</color>
+    <color name="exp">#684800</color>
+
 
 
 </resources>

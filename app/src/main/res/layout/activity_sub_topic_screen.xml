@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_web"
+    android:background="@drawable/gradient_app"
     android:paddingHorizontal="20dp"
     android:paddingBottom="30dp"
     tools:context=".SubTopicScreen">
@@ -29,32 +29,32 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginHorizontal="40dp"
         android:layout_marginBottom="20dp"
-        android:src="@drawable/ic_close_24"
+        android:src="@drawable/ic_smartphone_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/spaceblue" />
+        app:tint="@color/freshCinnamon" />
 
     <ListView
         android:id="@+id/listView_subtopics"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
         android:divider="@color/grey"
         android:dividerHeight="0dp"
-        android:scrollbars="none"
         android:footerDividersEnabled="false"
         android:paddingTop="10dp"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_sub_topics"
-        android:layout_marginBottom="20dp"
-        />
-
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

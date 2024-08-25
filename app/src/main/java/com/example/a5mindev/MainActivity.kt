@@ -13,8 +13,6 @@ import okhttp3.OkHttpClient
 
 
 class MainActivity : AppCompatActivity() {
-    var client: OkHttpClient = OkHttpClient()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
