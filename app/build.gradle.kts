@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.a5mindev"
+    namespace = "com.towerofapp.a5mindev"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.a5mindev"
+        applicationId = "com.towerofapp.a5mindev"
         minSdk = 27
         targetSdk = 34
         versionCode = 1
