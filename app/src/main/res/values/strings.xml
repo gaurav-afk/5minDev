@@ -54,4 +54,5 @@
     <string name="ai_ml">AI / ML</string>
     <string name="app_development">App Development</string>
     <string name="_5mindev">5MinDev</string>
+    <string name="no_shorts_available"><![CDATA[<No shorts available/>]]></string>
 </resources>

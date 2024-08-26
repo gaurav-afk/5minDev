@@ -1,4 +1,4 @@
-package com.example.a5mindev
+package com.towerofapp.a5mindev
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,17 +6,20 @@ import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.a5mindev.data.Shorts
-import com.example.a5mindev.data.ShortsDatabase
-import com.example.a5mindev.databinding.ActivityFiveShortsBinding
 import com.google.ai.client.generativeai.GenerativeModel
-import kotlinx.coroutines.*
+import com.towerofapp.a5mindev.data.Shorts
+import com.towerofapp.a5mindev.data.ShortsDatabase
+import com.towerofapp.a5mindev.databinding.ActivityFiveShortsBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONException
 
+
 class FiveShorts : AppCompatActivity() {
     private lateinit var binding: ActivityFiveShortsBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFiveShortsBinding.inflate(layoutInflater)
@@ -129,20 +132,24 @@ class FiveShorts : AppCompatActivity() {
     }
     private fun displayShorts(shortsList: List<Shorts>) {
         showLoading(false)
+        if(shortsList.isEmpty()){
+            binding.tvNoShorts.visibility = View.VISIBLE
+        }
+        else {
+            val adapter = ShortsAdapter(this, shortsList)
+            binding.lvShorts.adapter = adapter
+            binding.lvShorts.setOnItemClickListener { _, _, position, _ ->
+                val selectedShort = shortsList[position]
 
-        val adapter = ShortsAdapter(this, shortsList)
-        binding.lvShorts.adapter = adapter
-        binding.lvShorts.setOnItemClickListener { _, _, position, _ ->
-            val selectedShort = shortsList[position]
+                val intent = Intent(this, ShortsDetail::class.java).apply {
+                    putExtra(ShortsDetail.ARG_TITLE, selectedShort.title)
+                    putExtra(ShortsDetail.ARG_DESCRIPTION, selectedShort.description)
+                    putExtra(ShortsDetail.ARG_KEY_POINTS, selectedShort.keyPoints)
+                    putExtra(ShortsDetail.ARG_CONCLUSION, selectedShort.conclusion)
+                }
 
-            val intent = Intent(this, ShortsDetail::class.java).apply {
-                putExtra(ShortsDetail.ARG_TITLE, selectedShort.title)
-                putExtra(ShortsDetail.ARG_DESCRIPTION, selectedShort.description)
-                putExtra(ShortsDetail.ARG_KEY_POINTS, selectedShort.keyPoints)
-                putExtra(ShortsDetail.ARG_CONCLUSION, selectedShort.conclusion)
+                startActivity(intent)
             }
-
-            startActivity(intent)
         }
     }
     private fun showLoading(isLoading: Boolean) {
