@@ -1,9 +1,12 @@
-package com.example.a5mindev.data
+package com.towerofapp.a5mindev.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.towerofapp.a5mindev.data.Shorts
+import com.towerofapp.a5mindev.data.ShortsDao
+
 
 @Database(entities = [Shorts::class], version = 1)
 abstract class ShortsDatabase : RoomDatabase() {

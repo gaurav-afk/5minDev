@@ -1,9 +1,9 @@
-package com.example.a5mindev
+package com.towerofapp.a5mindev
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.a5mindev.databinding.ActivityShortsDetailBinding
+import com.towerofapp.a5mindev.databinding.ActivityShortsDetailBinding
 
 class ShortsDetail : AppCompatActivity() {
 

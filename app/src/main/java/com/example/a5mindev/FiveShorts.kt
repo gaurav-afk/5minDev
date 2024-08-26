@@ -1,4 +1,4 @@
-package com.example.a5mindev
+package com.towerofapp.a5mindev
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,13 +6,17 @@ import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.a5mindev.data.Shorts
-import com.example.a5mindev.data.ShortsDatabase
-import com.example.a5mindev.databinding.ActivityFiveShortsBinding
 import com.google.ai.client.generativeai.GenerativeModel
-import kotlinx.coroutines.*
+import com.towerofapp.a5mindev.data.Shorts
+import com.towerofapp.a5mindev.data.ShortsDatabase
+import com.towerofapp.a5mindev.databinding.ActivityFiveShortsBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONException
+
 
 class FiveShorts : AppCompatActivity() {
     private lateinit var binding: ActivityFiveShortsBinding

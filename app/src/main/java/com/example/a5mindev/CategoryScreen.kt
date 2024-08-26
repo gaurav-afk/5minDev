@@ -1,5 +1,6 @@
-package com.example.a5mindev
+package com.towerofapp.a5mindev
 
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -9,9 +10,12 @@ import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.a5mindev.databinding.ActivityCategoryScreenBinding
+import androidx.core.content.ContextCompat.startActivity
+import androidx.databinding.DataBindingUtil.setContentView
 import com.google.android.flexbox.FlexboxLayout
+import com.towerofapp.a5mindev.databinding.ActivityCategoryScreenBinding
 import java.util.concurrent.TimeUnit
+
 
 class CategoryScreen : AppCompatActivity() {
     private lateinit var binding: ActivityCategoryScreenBinding

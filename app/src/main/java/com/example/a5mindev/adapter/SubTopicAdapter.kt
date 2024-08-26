@@ -1,10 +1,13 @@
+package com.towerofapp.a5mindev
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import com.example.a5mindev.R
-import com.example.a5mindev.databinding.ItemSubtopicBinding
+import com.towerofapp.a5mindev.R
+import com.towerofapp.a5mindev.databinding.ItemSubtopicBinding
+
 
 class SubTopicAdapter(
     context: Context,
