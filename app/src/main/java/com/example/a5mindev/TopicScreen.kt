@@ -43,16 +43,14 @@ class TopicScreen : AppCompatActivity() {
     }
 
     private fun handleButtonClick(data: String) {
-
         showInterAd(data)
     }
 
 
     private fun showInterAd(data: String) {
         val currentTime = SystemClock.elapsedRealtime()
-        if (currentTime - lastAdTime >= 2 * 60 * 1000) { // 2 minutes in milliseconds
+        if (currentTime - lastAdTime >= 2 * 60 * 1000) {
             if (mInterstitialAd != null) {
-                Log.i("topic1", data)
                 mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
                     override fun onAdDismissedFullScreenContent() {
                         super.onAdDismissedFullScreenContent()
@@ -63,14 +61,12 @@ class TopicScreen : AppCompatActivity() {
                 }
                 mInterstitialAd?.show(this)
             } else {
-                Log.i("topic2", data)
                 val openSubTopicPage = Intent(this, SubTopicScreen::class.java)
                 openSubTopicPage.putExtra("topic", data)
                 startActivity(openSubTopicPage)
             }
-            lastAdTime = currentTime // Update the last ad time
+            lastAdTime = currentTime
         } else {
-            Log.i("topic3", "Ad cooldown not completed $lastAdTime $currentTime")
             val openSubTopicPage = Intent(this, SubTopicScreen::class.java)
             openSubTopicPage.putExtra("topic", data)
             startActivity(openSubTopicPage)
