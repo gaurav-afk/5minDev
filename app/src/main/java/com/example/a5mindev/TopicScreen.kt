@@ -1,4 +1,4 @@
-package com.towerofapp.a5mindev
+package com.example.a5mindev
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,10 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.towerofapp.a5mindev.databinding.ActivityTopicScreenBinding
+import androidx.core.content.ContextCompat.startActivity
+import androidx.databinding.DataBindingUtil.setContentView
+import com.example.a5mindev.databinding.ActivityTopicScreenBinding
+
 
 class TopicScreen : AppCompatActivity() {
     private lateinit var binding: ActivityTopicScreenBinding

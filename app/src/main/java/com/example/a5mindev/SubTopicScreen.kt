@@ -1,4 +1,4 @@
-package com.towerofapp.a5mindev
+package com.example.a5mindev
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,9 @@ import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.towerofapp.a5mindev.databinding.ActivitySubTopicScreenBinding
+import androidx.core.content.ContextCompat.startActivity
+import androidx.databinding.DataBindingUtil.setContentView
+import com.example.a5mindev.databinding.ActivitySubTopicScreenBinding
 
 
 class SubTopicScreen : AppCompatActivity() {

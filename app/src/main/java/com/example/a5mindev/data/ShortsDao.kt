@@ -1,10 +1,10 @@
-package com.towerofapp.a5mindev.data
+package com.example.a5mindev.data
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.towerofapp.a5mindev.data.Shorts
+import com.example.a5mindev.data.Shorts
 
 
 @Dao
