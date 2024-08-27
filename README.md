@@ -1,5 +1,5 @@
 # 5-Min Dev App 
-<img src="https://github.com/user-attachments/assets/118aff22-8edd-4114-bd14-7523f018f278" width="1920" height="1080">
+<img src="https://github.com/user-attachments/assets/118aff22-8edd-4114-bd14-7523f018f278" width="1024" height="500">
 
 
 Welcome to the 5-Min Dev app! This Android application provides quick and insightful summaries across various topics like Web Development, App Development, Game Development, and AI/Machine Learning. The app generates detailed, easy-to-understand summaries for developers and enthusiasts looking to learn about different subtopics within these domains.
