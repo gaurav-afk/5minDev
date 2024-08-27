@@ -1,4 +1,5 @@
 # 5-Min Dev App 
+![5Mindev_banner](https://github.com/user-attachments/assets/118aff22-8edd-4114-bd14-7523f018f278)
 <img src="https://github.com/user-attachments/assets/f6788d99-fbe0-4ccb-8dc0-dbd88ed01f3b" width="100" height="100">
 
 
