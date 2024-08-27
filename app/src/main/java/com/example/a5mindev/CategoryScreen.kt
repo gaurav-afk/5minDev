@@ -25,18 +25,14 @@ class CategoryScreen : AppCompatActivity() {
     private lateinit var categories: List<String>
     private lateinit var topic: String
     private lateinit var subTopic: String
-    private lateinit var sharedPreferences: SharedPreferences
 
     companion object {
         private const val PREFS_NAME = "SubTopicPrefs"
-        private const val LAST_VISIT_KEY = "lastVisit"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
-        sharedPreferences = getSharedPreferences(CategoryScreen.PREFS_NAME, MODE_PRIVATE)
 
         topic = intent.getStringExtra("topic").orEmpty()
         subTopic = intent.getStringExtra("subTopic").orEmpty()
@@ -50,7 +46,6 @@ class CategoryScreen : AppCompatActivity() {
         }
         displayCategories(categories)
     }
-
 
     private fun getCategoriesForSubtopic(subTopic: String): List<String> {
         return when (subTopic) {
@@ -75,7 +70,6 @@ class CategoryScreen : AppCompatActivity() {
             "ui/ux design" -> listOf("User Interface Design", "User Experience Design", "Interaction Design", "Wireframing and Prototyping", "Usability Testing", "Visual Design Principles", "Responsive Design", "Accessibility in Games", "Player Feedback Integration", "HUD Design")
             "game testing and debugging" -> listOf("Quality Assurance (QA)", "Bug Tracking and Reporting", "Automated Testing", "Playtesting", "Performance Testing", "Compatibility Testing", "Usability Testing", "Regression Testing", "Debugging Tools and Techniques", "Test Case Design")
             "vr/ar development" -> listOf("Virtual Reality (VR) Development", "Augmented Reality (AR) Development", "Mixed Reality (MR) Development", "VR/AR Interaction Design", "3D Modeling for VR/AR", "Spatial Computing", "VR/AR Hardware Integration", "VR/AR Performance Optimization", "Immersive Experience Design", "VR/AR Prototyping")
-
 
             // AI and machine learning
             "machine learning" -> listOf("Supervised Learning", "Unsupervised Learning", "Reinforcement Learning", "Decision Trees", "Random Forests", "Support Vector Machines", "K-Nearest Neighbors")
@@ -104,10 +98,6 @@ class CategoryScreen : AppCompatActivity() {
 
 
     private fun handleButtonClick(category: String) {
-        val lastVisitTimestamp = sharedPreferences.getLong(LAST_VISIT_KEY, 0)
-        val currentTime = System.currentTimeMillis()
-        Log.i("lastVisitTimestamp:",lastVisitTimestamp.toString())
-        if (currentTime - lastVisitTimestamp >= TimeUnit.DAYS.toMillis(1)) {
             val openShorts = Intent(this, FiveShorts::class.java)
             Log.i("category:", category)
             openShorts.putExtra("topic", topic)
@@ -115,39 +105,5 @@ class CategoryScreen : AppCompatActivity() {
             openShorts.putExtra("category", category)
             startActivity(openShorts)
 
-            sharedPreferences.edit().putLong(LAST_VISIT_KEY, currentTime).apply()
-        } else {
-            showAlert()
         }
-    }
-
-    private fun getRemainingTime(): String {
-        val lastAccessTime = sharedPreferences.getLong(LAST_VISIT_KEY, 0L)
-        val currentTime = System.currentTimeMillis()
-        val oneDayInMillis = 24 * 60 * 60 * 1000
-
-        val nextAllowedTime = lastAccessTime + oneDayInMillis
-        var remainingTimeMillis = nextAllowedTime - currentTime
-
-        val hours = (remainingTimeMillis / (1000 * 60 * 60)).toInt()
-        val minutes = ((remainingTimeMillis % (1000 * 60 * 60)) / (1000 * 60)).toInt()
-        val seconds = ((remainingTimeMillis % (1000 * 60)) / 1000).toInt()
-
-        Log.i("timer:", "$hours h, $minutes m, $seconds s.")
-        return "$hours h $minutes m"
-    }
-
-
-
-    private fun showAlert() {
-        val remainingTimeMessage = getRemainingTime()
-
-        AlertDialog.Builder(this)
-            .setTitle("Access Restricted")
-            .setMessage("$remainingTimeMessage \nYou can only generate shorts once per day. Please try again tommorow.")
-            .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-            .create()
-            .show()
-    }
-
 }
