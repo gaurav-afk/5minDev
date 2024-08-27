@@ -1,4 +1,4 @@
-package com.towerofapp.a5mindev
+package com.example.a5mindev
 
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
@@ -12,8 +12,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil.setContentView
+import com.example.a5mindev.FiveShorts
+import com.example.a5mindev.R
+import com.example.a5mindev.databinding.ActivityCategoryScreenBinding
 import com.google.android.flexbox.FlexboxLayout
-import com.towerofapp.a5mindev.databinding.ActivityCategoryScreenBinding
 import java.util.concurrent.TimeUnit
 
 

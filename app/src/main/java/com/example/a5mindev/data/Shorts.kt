@@ -1,4 +1,4 @@
-package com.towerofapp.a5mindev.data
+package com.example.a5mindev.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

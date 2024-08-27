@@ -1,4 +1,4 @@
-package com.towerofapp.a5mindev
+package com.example.a5mindev
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,10 +6,12 @@ import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
+import androidx.databinding.DataBindingUtil.setContentView
+import com.example.a5mindev.data.Shorts
+import com.example.a5mindev.data.ShortsDatabase
+import com.example.a5mindev.databinding.ActivityFiveShortsBinding
 import com.google.ai.client.generativeai.GenerativeModel
-import com.towerofapp.a5mindev.data.Shorts
-import com.towerofapp.a5mindev.data.ShortsDatabase
-import com.towerofapp.a5mindev.databinding.ActivityFiveShortsBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
