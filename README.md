@@ -1,4 +1,3 @@
-# 5-Min Dev App
 <img src="https://github.com/user-attachments/assets/ca09d2ee-f2fb-48d5-88b4-9e417a51a504">
 
 
