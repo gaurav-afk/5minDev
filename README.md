@@ -8,8 +8,7 @@ Easy-to-Use Interface: Simple design for quick navigation and immediate access t
 Local Emergency Numbers: Automatically detects and uses local emergency numbers based on your region.
 Flight Mode Compatibility: Supports calling emergency numbers even while in flight mode (dependent on carrier and region).
 Screenshots
-<img src="https://github.com/user-attachments/assets/ca09d2ee-f2fb-48d5-88b4-9e417a51a504" width="200" height="400"> <img src="https://github.com/user-attachments/assets/10a5a3a9-df87-4f70-b947-0932b424bf82" width="200" height="400"> <img src="https://github.com/user-attachments/assets/ae43e78b-6ee0-47d5-847f-186ed8bc20e3" width="200" height="400">
-Getting Started
+
 Prerequisites
 Android Studio: Version 4.0 or later.
 Kotlin: Version 1.7 or later.
