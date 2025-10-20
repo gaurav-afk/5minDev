@@ -41,7 +41,7 @@ Welcome to the 5-Min Dev app! This Android application provides quick and insigh
 Installation
 1. Clone the Repository:
 
-git clone https://github.com/your-username/5mindev-app.git
+git clone https://github.com/gaurav-afk/5mindev-app.git
 cd 5mindev-app
 
 
