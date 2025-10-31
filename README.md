@@ -26,6 +26,9 @@ Welcome to the 5-Min Dev app! This Android application provides quick and insigh
 
 
 
+https://github.com/user-attachments/assets/e9417b26-3d9e-4e79-b03c-d197a5e2dd9e
+
+
 
 
 
