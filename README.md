@@ -11,6 +11,10 @@ Welcome to the 5-Min Dev app! This Android application provides quick and insigh
 - **Summary Display**: View summaries with a title, description, key points, and a conclusion.
 - **Offline Access**: Previously generated summaries are saved locally using Room Database and can be accessed offline.
 
+## Demo
+
+https://github.com/user-attachments/assets/e9417b26-3d9e-4e79-b03c-d197a5e2dd9e
+
 ## Screenshots
 
 <img src="https://github.com/user-attachments/assets/10a5a3a9-df87-4f70-b947-0932b424bf82" width="200" height="400">
@@ -21,14 +25,6 @@ Welcome to the 5-Min Dev app! This Android application provides quick and insigh
 <img src="https://github.com/user-attachments/assets/afc26e79-2b1a-4000-a764-5c0c4428d52f" width="200" height="400">
 <img src="https://github.com/user-attachments/assets/bb3fec77-5f15-4deb-9bfb-28ea94b3e1aa" width="200" height="400">
 <img src="https://github.com/user-attachments/assets/417f3483-5707-49d2-89ed-3862f2fde2f5" width="200" height="400">
-
-
-
-
-## Demo
-https://github.com/user-attachments/assets/e9417b26-3d9e-4e79-b03c-d197a5e2dd9e
-
-
 
 
 
